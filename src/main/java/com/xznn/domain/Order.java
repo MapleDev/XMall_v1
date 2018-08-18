@@ -9,9 +9,9 @@ public class Order {
     private Date ordertime; //下单时间
     private double total; //总计
     private int state; //状态
-    private String address; //收货人地址
-    private String name; //收货人姓名
-    private String telephone; //收货人电话
+    private String address = ""; //收货人地址
+    private String name = ""; //收货人姓名
+    private String telephone = ""; //收货人电话
 
     // private String uid;
     // 1_程序对象和对象发生关系,而不是对象和对象的属性发生关系

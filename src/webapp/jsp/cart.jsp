@@ -124,7 +124,7 @@ $(function(){
 		if(confirm("确认删除?")){
 			//获取到被删除商品pid
 			var pid=this.id;
-			window.location.href="/store_v5/CartServlet?method=removeCartItem&id="+pid;
+			window.location.href="${pageContext.request.contextPath}/CartServlet?method=removeCartItem&id="+pid;
 		}
 	});
 });

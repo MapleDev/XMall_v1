@@ -9,5 +9,6 @@ public interface CategoryDao {
 
 
     List<Category> findAllCats() throws SQLException;
+    int addCategory(String cname) throws SQLException;
 
 }

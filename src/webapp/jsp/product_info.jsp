@@ -28,13 +28,13 @@
 	<body>
 
 		
-			<%@ include file="/jsp/header.jsp" %>
+		<%@ include file="/jsp/header.jsp" %>
 
 
 		<div class="container">
 			<div class="row">
 				<div style="border: 1px solid #e4e4e4;width:930px;margin-bottom:10px;margin:0 auto;padding:10px;margin-bottom:10px;">
-					<a href="${pageContext.request.contextPath}/">首页&nbsp;&nbsp;&gt;</a>
+					<a href="${pageContext.request.contextPath}/IndexServlet">首页&nbsp;&nbsp;&gt;</a>
 					
 				</div>
 

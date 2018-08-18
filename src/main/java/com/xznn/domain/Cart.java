@@ -35,9 +35,9 @@ public class Cart {
 
 
     //返回MAP中所有的值
-    public Collection<CartItem> getCartItems() {
-        return map.values();
-    }
+//    public Collection<CartItem> getCartItems() {
+//        return map.values();
+//    }
 
 
     //移除购物项

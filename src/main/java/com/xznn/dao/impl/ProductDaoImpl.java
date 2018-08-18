@@ -41,4 +41,11 @@ public class ProductDaoImpl implements ProductDao {
         Long count = queryRunner.query(sql, new ScalarHandler<>(), cid);
         return count.intValue();
     }
+
+    @Override
+    public Product findProductByPid(String pid) throws SQLException {
+        String sql = "select * from product where pflag = 0 and pid = ?";
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        return queryRunner.query(sql, new BeanHandler<>(Product.class), pid);
+    }
 }

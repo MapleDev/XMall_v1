@@ -35,8 +35,7 @@ public class ProductService {
         return pageModel;
     }
 
-//    private int findTotalRecords(String cid) throws SQLException {
-//        return productDao.findTotalRecords(cid);
-//    }
-
+    public Product findProductByPid(String pid) throws SQLException {
+        return productDao.findProductByPid(pid);
+    }
 }

@@ -29,9 +29,9 @@ public class UserServlet extends BaseServlet {
 
         UserService userService = new UserServiceImpl();
         try {
-            userService.userLogin(user);
-            req.getSession().setAttribute("user", user);
-            resp.sendRedirect(req.getContextPath() + "/jsp/index.jsp");
+            User loginUser = userService.userLogin(user);
+            req.getSession().setAttribute("loginUser", loginUser);
+            resp.sendRedirect(req.getContextPath() + "/IndexServlet");
             return null;
         } catch (Exception e) {
             e.printStackTrace();

@@ -35,6 +35,8 @@
     <div class="row" style="width:1210px;margin:0 auto;">
         <div class="col-md-12">
             <h1>暂无商品信息</h1>
+            <br/>
+            <br/>
         </div>
     </div>
 </c:if>
@@ -48,14 +50,22 @@
             </ol>
         </div>
         <c:forEach items="${page.list}" var="p">
-            <div class="col-md-2">
+            <%--<div class="col-md-2">
                 <a href="${pageContext.request.contextPath}/ProductServlet?method=findProductByPid&pid=${p.pid}">
                     <img src="${pageContext.request.contextPath}/${p.pimage}" width="170" height="170"
                          style="display: inline-block;">
                 </a>
                 <p><a href="${pageContext.request.contextPath}/ProductServlet?method=findProductByPid&pid=${p.pid}"
                       style='color:green'>${p.pname}</a></p>
-                <p><font color="#FF0000">商城价：&yen;${p.shop_price}</font></p>
+                <p><font color="#FF0000">商城价：&yen;${p.shop_price}</font> <del> &yen;${p.market_price}</del></p>
+            </div>--%>
+            <div class="col-md-2">
+                <a href="${pageContext.request.contextPath}/ProductServlet?method=findProductByPid&pid=${p.pid}">
+                    <img src="${pageContext.request.contextPath}/${p.pimage}" width="170" height="170"
+                         style="display: inline-block;">
+                    <p style="color:green">${p.pname}</p>
+                    <p style="color:red">商城价：&yen;${p.shop_price} <del style="color:grey"> &yen;${p.market_price}</del></p>
+                </a>
             </div>
         </c:forEach>
     </div>
