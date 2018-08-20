@@ -36,9 +36,42 @@ public class AdminCategoryServlet extends BaseServlet {
 
         CategoryService categoryService = new CategoryService();
         int i = categoryService.addCategory(cname);
-        logger.warn("i = " + i);
+        logger.warn("addCategory = " + i);
 
-//        return "/AdminCategoryServlet?method=findAllCats";
+//        return "/AdminCategoryServlet?method=findAllCats"; // ? 会死循环
+        resp.sendRedirect(req.getContextPath() + "/AdminCategoryServlet?method=findAllCats");
+        return null;
+    }
+
+    protected String editCategoryUI(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+        String cname = req.getParameter("cname");
+        String cid = req.getParameter("cid");
+
+        Category category = new Category(cid, cname);
+        req.setAttribute("category", category);
+
+        return "admin/category/edit.jsp";
+    }
+
+    protected String updateCategory(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+        String cname = req.getParameter("cname");
+        String cid = req.getParameter("cid");
+
+        CategoryService categoryService = new CategoryService();
+        int i = categoryService.updateCategory(cname, cid);
+        logger.warn("updateCategory = " + i);
+
+        resp.sendRedirect(req.getContextPath() + "/AdminCategoryServlet?method=findAllCats");
+        return null;
+    }
+
+
+    protected String deleteCategory(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
+        String cid = req.getParameter("cid");
+
+        CategoryService categoryService = new CategoryService();
+        int i = categoryService.deleteCategory(cid);
+        logger.warn("deleteCategory = " + i);
 
         resp.sendRedirect(req.getContextPath() + "/AdminCategoryServlet?method=findAllCats");
         return null;

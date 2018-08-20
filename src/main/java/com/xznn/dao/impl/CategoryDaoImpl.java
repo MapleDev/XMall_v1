@@ -25,4 +25,18 @@ public class CategoryDaoImpl implements CategoryDao {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
         return queryRunner.update(JDBCUtils.getConnection(), sql, UUIDUtils.getId(), cname);
     }
+
+    @Override
+    public int updateCategory(String cname, String cid) throws SQLException {
+        String sql = "update category set cname=? where cid=?";
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        return queryRunner.update(JDBCUtils.getConnection(), sql, cname, cid);
+    }
+
+    @Override
+    public int deleteCategory(String cid) throws SQLException {
+        String sql = "delete from category where cid=?";
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        return queryRunner.update(JDBCUtils.getConnection(), sql, cid);
+    }
 }

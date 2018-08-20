@@ -5,9 +5,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<LINK href="${pageContext.request.contextPath}/css/Style1.css" type="text/css" rel="stylesheet">
 	</HEAD>
-	
+
 	<body>
-		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/#" method="post">
+		<%--<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/#" method="post">--%>
+		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/AdminCategoryServlet?method=updateCategory" method="post">
 
 			&nbsp;
 			<table cellSpacing="1" cellPadding="5" width="100%" align="center" bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
@@ -15,7 +16,7 @@
 					<td class="ta_01" align="center" bgColor="#afd1f3" colSpan="4"
 						height="26">
 						<STRONG>编辑分类</STRONG>
-						
+
 					</td>
 				</tr>
 
@@ -25,9 +26,10 @@
 					</td>
 					<td class="ta_01" bgColor="#ffffff" colspan="3">
 						<input type="text" name="cname" value="${ category.cname }" id="userAction_save_do_logonName" class="bg"/>
-						</td>
+						<input type="hidden" name="cid" value="${ category.cid }"/>
+					</td>
 				</tr>
-			
+
 				<tr>
 					<td class="ta_01" style="WIDTH: 100%" align="center"
 						bgColor="#f5fafe" colSpan="4">

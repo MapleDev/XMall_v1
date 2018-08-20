@@ -63,13 +63,14 @@
 												${c.cname}
 											</td>
 											<td align="center" style="HEIGHT: 22px">
-												<a href="edit.jsp">
+												<%--<a href="admin/category/edit.jsp">--%>
+												<a href="${pageContext.request.contextPath}/AdminCategoryServlet?method=editCategoryUI&cid=${c.cid}&cname=${c.cname}">
 													<img src="${pageContext.request.contextPath}/img/admin/i_edit.gif" border="0" style="CURSOR: hand">
 												</a>
 											</td>
 									
 											<td align="center" style="HEIGHT: 22px">
-												<a href="#">
+												<a href="${pageContext.request.contextPath}/AdminCategoryServlet?method=deleteCategory&cid=${c.cid}">
 													<img src="${pageContext.request.contextPath}/img/admin/i_del.gif" width="16" height="16" border="0" style="CURSOR: hand">
 												</a>
 											</td>

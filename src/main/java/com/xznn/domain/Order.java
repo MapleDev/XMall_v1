@@ -8,7 +8,7 @@ public class Order {
     private String oid; //订单编号
     private Date ordertime; //下单时间
     private double total; //总计
-    private int state; //状态
+    private int state; //状态 未付款的订单 state=1; 已付款订单 state=2; 已发货的订单 state=3; 已完成的订单 state=4;
     private String address = ""; //收货人地址
     private String name = ""; //收货人姓名
     private String telephone = ""; //收货人电话

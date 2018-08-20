@@ -18,4 +18,13 @@ public class CategoryService {
     public int addCategory(String cname) throws SQLException {
         return categoryDao.addCategory(cname);
     }
+
+    public int updateCategory(String cname, String cid) throws SQLException {
+        return categoryDao.updateCategory(cname, cid);
+    }
+
+    public int deleteCategory(String cid) throws SQLException {
+        return categoryDao.deleteCategory(cid);
+    }
+
 }

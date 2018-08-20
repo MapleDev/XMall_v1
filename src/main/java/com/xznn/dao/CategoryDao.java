@@ -11,4 +11,7 @@ public interface CategoryDao {
     List<Category> findAllCats() throws SQLException;
     int addCategory(String cname) throws SQLException;
 
+    int updateCategory(String cname, String cid) throws SQLException;
+
+    int deleteCategory(String cid) throws SQLException;
 }

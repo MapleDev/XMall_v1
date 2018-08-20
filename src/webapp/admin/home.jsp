@@ -20,6 +20,6 @@
 		<frame src="${pageContext.request.contextPath}/admin/left.jsp" name="leftFrame" noresize scrolling="YES">
 		<frame src="${pageContext.request.contextPath}/admin/welcome.jsp" name="mainFrame">
   </frameset>
-  <frame src="${pageContext.request.contextPath}/admin/bottom.jsp" name="bottomFrame" scrolling="NO"  noresize>
+  <%--<frame src="${pageContext.request.contextPath}/admin/bottom.jsp" name="bottomFrame" scrolling="NO"  noresize>--%>
 </frameset>
 </html>
