@@ -4,7 +4,7 @@
         <property name="driverClass">com.mysql.jdbc.Driver</property>
         <property name="jdbcUrl">jdbc:mysql://localhost:3306/store_07</property>
         <property name="user">root</property>
-        <property name="password">admin</property>
+        <property name="password">123456</property>
         <property name="checkoutTimeout">30000</property>
         <!--<property name="checkoutTimeout">100</property>-->
         <property name="idleConnectionTestPeriod">30</property>

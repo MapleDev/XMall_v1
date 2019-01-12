@@ -3,6 +3,7 @@ package com.xznn.web.servlet;
 import com.xznn.domain.Cart;
 import com.xznn.domain.CartItem;
 import com.xznn.domain.Product;
+import com.xznn.domain.User;
 import com.xznn.service.ProductService;
 import com.xznn.web.base.BaseServlet;
 
@@ -18,6 +19,14 @@ public class CartServlet extends BaseServlet {
     public String addCartItemToCart(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
 
         HttpSession session = req.getSession();
+        //确认用户登录状态
+        User user = (User) session.getAttribute("loginUser");
+        if (user == null) {
+            req.setAttribute("msg", "请登录之后在下单");
+            return "/jsp/info.jsp";
+        }
+
+
         Cart cart = (Cart) session.getAttribute("cart");
         if (cart == null) {
             cart = new Cart();
@@ -35,6 +44,7 @@ public class CartServlet extends BaseServlet {
         cartItem.setProduct(product);
 
         cart.addCartItemToCar(cartItem);
+
         session.setAttribute("cart", cart);
 
         return "jsp/cart.jsp";
@@ -51,8 +61,6 @@ public class CartServlet extends BaseServlet {
     }
 
     public String clearCart(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
-//        req.getSession().setAttribute("cart", null);
-
         Cart cart = (Cart) req.getSession().getAttribute("cart");
         cart.clearCart();
         return "jsp/cart.jsp";

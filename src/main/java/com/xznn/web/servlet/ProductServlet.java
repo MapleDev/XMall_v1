@@ -22,7 +22,7 @@ public class ProductServlet extends BaseServlet {
         String cid = req.getParameter("cid");
 
         ProductService productService = new ProductService();
-        PageModel pageModel = productService.findProductsByCidWithPage(num, cid);
+        PageModel pageModel = productService.findProductsByCidWithPage(num, cid, 10);
         req.setAttribute("page", pageModel);
         return "jsp/product_list.jsp";
     }

@@ -42,7 +42,7 @@ public class BaseServlet extends HttpServlet {
     }
 
     // 默认方法
-    protected String defaultMethod(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
+    protected String defaultMethod(HttpServletRequest req, HttpServletResponse resp) throws SQLException, IOException {
         return null;
     }
 

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<%--分页显示的开始 --%>
     	<div style="text-align:center">
-    		共${page.totalPageNum}页/第${page.currentPageNum}页
+			第${page.currentPageNum}页 / 共${page.totalPageNum}页
     		
     		
     		<!-- <a href="/store_v5/ProductServlet?method=findProductsByCidWithPage&cid=1&num=1">首页</a> -->

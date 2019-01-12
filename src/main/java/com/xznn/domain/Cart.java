@@ -7,7 +7,6 @@ import java.util.Map;
 //2个属性3个方法
 public class Cart {
 
-
     //总计/积分
     private double total = 0;
     //个数不确定的购物项 商品pid<===>CartItem
@@ -33,12 +32,10 @@ public class Cart {
         }
     }
 
-
     //返回MAP中所有的值
-//    public Collection<CartItem> getCartItems() {
-//        return map.values();
-//    }
-
+    public Collection<CartItem> getCartItems() {
+        return map.values();
+    }
 
     //移除购物项
     public void removeCartItem(String pid) {
@@ -73,7 +70,6 @@ public class Cart {
     public Map<String, CartItem> getMap() {
         return map;
     }
-
 
     public void setMap(Map<String, CartItem> map) {
         this.map = map;

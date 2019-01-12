@@ -1,9 +1,7 @@
 package com.xznn.web.servlet;
 
 import com.xznn.domain.Category;
-import com.xznn.domain.Product;
 import com.xznn.service.CategoryService;
-import com.xznn.service.ProductService;
 import com.xznn.web.base.BaseServlet;
 import org.apache.log4j.Logger;
 

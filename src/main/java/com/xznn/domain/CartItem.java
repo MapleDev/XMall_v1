@@ -31,6 +31,4 @@ public class CartItem {
     public void setSubTotal(double subTotal) {
         this.subTotal = subTotal;
     }
-
-
 }

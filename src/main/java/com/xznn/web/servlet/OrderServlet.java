@@ -24,7 +24,6 @@ public class OrderServlet extends BaseServlet {
         //确认用户登录状态
         User user = (User) session.getAttribute("loginUser");
         if (user == null) {
-//            resp.sendRedirect(req.getContextPath() + "/jsp/login.jsp");
             req.setAttribute("msg", "请登录之后在下单");
             return "/jsp/info.jsp";
         }

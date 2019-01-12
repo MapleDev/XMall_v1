@@ -2,7 +2,9 @@ package com.xznn.web.filter;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -106,8 +108,7 @@ public class EncodingFilter implements Filter {
             } else if ("get".equalsIgnoreCase(method)) {
                 Map<String, String[]> map = request.getParameterMap();
                 if (flag) {
-                    for (String key : map.keySet()) {
-                        String[] arr = map.get(key);
+                    for (String[] arr : map.values()) {
                         //继续遍历数组
                         for (int i = 0; i < arr.length; i++) {
                             //编码
